@@ -2,10 +2,6 @@ from flask import request, Flask, make_response
 
 app = Flask(__name__)
 
-# @app.route('/')
-# def index():
-#     return '<h1>Hello World!</h1>', 400
-
 
 @app.route('/')
 def index():
@@ -13,7 +9,7 @@ def index():
     return '<p>Your browser is {}</p>'.format(user_agent), 400
 
 
-@app.route('/user/<name>')
+@app.route('/projects/<project>/<collection>/<name>')
 def user(name):
     return '<h1>Hello, {}!</h1>'.format(name)
 
